@@ -56,21 +56,28 @@ body {
   flex-wrap: nowrap;
   gap: 20px;
   justify-content: center;
+  margin: 20px;
 }
 
 .album {
   position: relative;
-  width: 220px;
+  width: 320px;
   border: 1px solid #bbd5f7;
+  border-radius: 10px;
 }
 
 .album img {
   width: 100%;
   display: block;
+  padding: 10px;
 }
 /* the text that should appear when hovering*/
 .overlay {
   display: none;
+}
+.name {
+  padding: 10px;
+  color: rgb(64, 134, 146);
 }
 /* the name of the image and that will be always visible on image*/
 .info {
