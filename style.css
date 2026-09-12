@@ -1,1 +1,221 @@
-/* Add your CSS here */
+/* Keep sizing predictable on every screen. */
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  color: #17213c;
+  background: #f4f7fb;
+  font-family: Arial, Helvetica, sans-serif;
+  line-height: 1.6;
+}
+
+.hero {
+  display: flex;
+  align-items: center;
+  min-height: 460px;
+  padding: 60px;
+  color: white;
+  background: linear-gradient(120deg, #071b4a, #123f91 60%, rgb(21, 114, 184));
+}
+
+.hero-content {
+  width: 100%;
+  max-width: 760px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.hero img {
+  display: block;
+  width: 150px;
+  margin: 0 auto 34px;
+}
+
+.hero h1 {
+  max-width: 700px;
+  margin: 0 auto 20px;
+  font-size: clamp(1.5rem, 6vw, 4rem);
+  line-height: 1.05;
+  text-transform: uppercase;
+}
+
+.hero p {
+  border-top: 2px solid rgb(47, 137, 255);
+  padding-top: 12px;
+  max-width: 620px;
+  margin: 0 auto;
+  font-size: 1.15rem;
+}
+
+/* MY containers and the album and horizontal timeline */
+.container {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  gap: 20px;
+  justify-content: center;
+}
+
+.album {
+  position: relative;
+  width: 220px;
+  border: 1px solid #bbd5f7;
+}
+
+.album img {
+  width: 100%;
+  display: block;
+}
+/* the text that should appear when hovering*/
+.overlay {
+  display: none;
+}
+/* the name of the image and that will be always visible on image*/
+.info {
+  padding: 10px;
+}
+
+
+
+
+.timeline-section {
+  padding: 72px 0 28px;
+}
+
+.section-heading {
+  max-width: 760px;
+  margin: 0 auto 38px;
+  padding: 0 8%;
+}
+
+.eyebrow {
+  margin: 0 0 8px;
+  color: #1673b8;
+  font-size: 0.8rem;
+  font-weight: bold;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.section-heading h2 {
+  margin: 0 0 10px;
+  color: #071b4a;
+  font-size: 2.3rem;
+  line-height: 1.1;
+}
+
+.section-heading p:last-child {
+  margin: 0;
+}
+
+.timeline {
+  display: flex;
+  gap: 24px;
+  flex-wrap: nowrap;
+  overflow-x: auto;
+  justify-content: center;
+  scroll-snap-type: x proximity;
+}
+
+.timeline-card {
+  flex: 0 0 285px;
+  overflow: hidden;
+  padding-bottom: 22px;
+  border: 1px solid #d7e0ec;
+  border-radius: 8px;
+  background: white;
+  box-shadow: 0 8px 20px rgba(7, 27, 74, 0.08);
+  scroll-snap-align: start;
+  transition: transform 180ms ease, box-shadow 180ms ease;
+}
+
+.timeline-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 14px 26px rgba(7, 27, 74, 0.16);
+}
+
+.timeline-card img {
+  display: block;
+  width: 100%;
+  height: 145px;
+  object-fit: cover;
+}
+
+.timeline-card h2,
+.timeline-card h3,
+.timeline-card p {
+  margin-right: 22px;
+  margin-left: 22px;
+}
+
+.timeline-card h2 {
+  margin-top: 22px;
+  margin-bottom: 2px;
+  color: #1673b8;
+  font-size: 1.8rem;
+}
+
+.timeline-card h3 {
+  margin-top: 0;
+  margin-bottom: 12px;
+  color: #071b4a;
+  font-size: 1.1rem;
+  line-height: 1.25;
+}
+
+.timeline-card p {
+  margin-bottom: 0;
+  color: #4b5870;
+  font-size: 0.95rem;
+}
+
+.timeline-note {
+  margin: 0 8% 48px;
+  color: #64748b;
+  font-size: 0.9rem;
+  text-align: center;
+}
+
+@media (max-width: 700px) {
+  .hero {
+    min-height: 430px;
+    padding: 52px 8%;
+  }
+
+  .hero img {
+    width: 125px;
+    margin-bottom: 26px;
+  }
+
+  .hero h1 {
+    font-size: 2.7rem;
+  }
+
+  .timeline-section {
+    padding-top: 52px;
+  }
+
+  .section-heading {
+    margin-bottom: 26px;
+  }
+
+  .section-heading h2 {
+    font-size: 2rem;
+  }
+
+  .timeline {
+    display: block;
+    padding: 0 8%;
+  }
+
+  .timeline-card {
+    width: 100%;
+    margin-bottom: 24px;
+  }
+
+  .timeline-note {
+    display: none;
+  }
+}
