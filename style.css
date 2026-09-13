@@ -59,16 +59,18 @@ body {
   max-width: 1500px;
   margin: 20px auto;
   align-items: center;
-  padding-bottom: 20px;
+  padding: 20px;
+  scroll-snap-type: x mandatory; /* The horizontal scroll snapping effect for the LevelUp */
 }
 
 .album {
   position: relative;
-  min-width: 360px;
+  min-width: 350px;
   border: 1px solid #bbd5f7;
   background-color: white;
   border-radius: 10px;
-  
+  transition: transform 0.3s ease-in-out;
+  scroll-snap-align: center; /* makes it snap */
 }
 
 .album img {
@@ -78,10 +80,36 @@ body {
   padding: 10px;
   object-fit: cover;
 }
+
+.album:hover {
+  transform: scale(1.04);
+  box-shadow: 0px 2px 6px rgb(0,0,0);
+}
+
+.album:hover .overlay{
+  opacity: 1;
+}
+
 /* the text that should appear when hovering*/
 .overlay {
-  display: none;
+  position: absolute;
+  min-width: 100%;
+  min-height: 100%;
+  display: flex;
+  text-align: center;
+  align-items: center;
+  justify-content: center;
+  box-sizing: border-box;
+  top: 0px;
+  background-color: rgba(62, 39, 25, 0.85);
+  color: #FDF6E3;
+  opacity: 0;
+  transition: opacity 0.3s ease-in-out;
+  border-radius: 10px;
+  padding-right: 11px;
+  padding-left: 12px;
 }
+
 .name {
   padding: 10px;
   color: rgb(64, 134, 146);
@@ -93,20 +121,20 @@ body {
 
 /* Custom scrollbar perhaps */
 /* This is the width of it*/
-::-webkit-scrollbar {
+div::-webkit-scrollbar {
   width: 16px;
 }
 /* This is the track */
-::-webkit-scrollbar-track {
+div::-webkit-scrollbar-track {
   box-shadow: inset 0 0 6px black;
   border-radius: 8px;
 }
-::-webkit-scrollbar-thumb {
-  background: blue;
+div::-webkit-scrollbar-thumb {
+  background: rgb(33, 66, 255);
   border-radius: 10px;
 }
-::-webkit-scrollbar-thumb:hover {
-  background: #b30000;
+div::-webkit-scrollbar-thumb:hover {
+  background: #0300b3;
 }
 
 
@@ -226,6 +254,18 @@ body {
   .hero h1 {
     font-size: 2.7rem;
   }
+
+  /* my better stuff */
+  .container {
+    flex-direction: column;
+    max-width: 100%;
+  }
+
+  .album {
+    width: 100%;
+    margin-bottom: 10px;
+  }
+
 
   .timeline-section {
     padding-top: 52px;
